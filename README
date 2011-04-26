@@ -40,7 +40,7 @@ Configuration Instructions:
 
 	https://www.mybitcoin.com/login/merchant-tools.php
 	1. In mybitcoin.com enable merchant tools, checkbox "Enable SCI Payment Automation"
-	2. In mybitcoin.com "SCI Receipt URL:" fill in "http://<your_opencart_url>/index.php?route=payment/btc_mybitcoin/callback"
+	2. In mybitcoin.com "SCI Receipt URL:" fill in [http://<your_opencart_url>/index.php?route=payment/btc_mybitcoin/callback]
 	
 	3. Upload files into your opencart installation
 	4. Go to your opencart administration. Extensions -> Payments -> "BTC mybitcoin.com" click [Install]
