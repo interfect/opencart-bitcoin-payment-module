@@ -1,0 +1,54 @@
+Copyright (C) 2011 by tabsa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+About
+	BTC payment via mybitcoin.com module for opencart.
+
+	
+Version 0.1
+	1. GnuPG authentication not implemented, all security depends upon keeping "SCI Automation Key" secret.
+	2. Slightly modified mybitcoin.com merchant library included
+	3. All currencies supported by mybitcoin.com will be automatically converted during payment, with an exchange rate from mybitcoin.com
+	
+	
+System Requirements:
+	mybitcoin.com account
+	Opencart 1.4.9.4
+	PHP 5+
+	Curl PHP Extension
+	Preg PHP Extension
+  
+  
+Configuration Instructions:
+
+	https://www.mybitcoin.com/login/merchant-tools.php
+	1. In mybitcoin.com enable merchant tools, checkbox "Enable SCI Payment Automation"
+	2. In mybitcoin.com "SCI Receipt URL:" fill in "http://<your_opencart_url>/index.php?route=payment/btc_mybitcoin/callback"
+	
+	3. Upload files into your opencart installation
+	4. Go to your opencart administration. Extensions -> Payments -> "BTC mybitcoin.com" click [Install]
+	5. Go to your opencart administration. Extensions -> Payments -> "BTC mybitcoin.com" click [Edit]
+	6. In module settings "SCI Username" <- set your mybitcoin.com username found here https://www.mybitcoin.com/login/settings.php
+	7. In module settings "SCI Automation Key" <- copy from mybitcoin.com(https://www.mybitcoin.com/login/merchant-tools.php) "SCI Automation Key"
+	8. In module settings "Your Bitcoin address at mybitcoin.com" <- Your Bitcoin Payment Address from here: https://www.mybitcoin.com/login/index.php
+	9. In module settings set "Order Status" -> "Pending" and "Status" to "Enabled"
+	10. Example http://imgur.com/eIAsH
+
+	
