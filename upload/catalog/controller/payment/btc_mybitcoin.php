@@ -56,13 +56,15 @@ class ControllerPaymentBTCmybitcoin extends Controller {
 		$result=mbc_getrates();
 		if ($result['SCI_Reason'] && $result['SCI_Currency_'.$order['currency'].'_Rate']) {
 			$this->data['total_btc']		=round($order['total']/$result['SCI_Currency_'.$order['currency'].'_Rate'],2);
-			$this->data['btc_rate']			=round($result['SCI_Currency_'.$order['currency'].'_Rate'],2);
+			$this->data['btc_rate']			=round($result['SCI_Currency_'.$order['currency'].'_Rate'],3);
 			$this->data['main_currency']	=$order['currency'];
 		}
 		
 		$plaintext_querystring=
-		"amount="			.$order['total'].
-		"&currency="		.$order['currency'].
+//		"amount="			.$order['total'].			// Use if you want mybitcoin.com to calculate for you
+		"amount="			.$this->data['total_btc'].	// Use above calculation (mybitcoin.com has small rounding errors)
+//		"&currency="		.$order['currency'].		// Use if you want mybitcoin.com to calculate for you
+		"&currency="		."BTC".						// Use above calculation (mybitcoin.com has small rounding errors)
 		"&payee_bcaddr="	.$this->data['mbc_address'].
 		"&payee_name="		.$this->data['mbc_username'].
 		"&note="			.$this->data['store_name'].''.$this->data['text_mbc_order_id'].''.$this->data['order_id'].
