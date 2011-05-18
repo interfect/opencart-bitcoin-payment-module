@@ -1,15 +1,7 @@
-
 <form action="https://www.mybitcoin.com/sci/paypage.php?t=<?php echo $enc_token; ?>" method="post" id="checkout" name="btc_checkout">
-	<input type="hidden" name="amount" 			value="<?php echo $order_total;?>">
-	<input type="hidden" name="currency" 		value="<?php echo $order_currency;?>">
-	<input type="hidden" name="payee_bcaddr" 	value="<?php echo $mbc_address; ?>">
-	<input type="hidden" name="payee_name" 		value="<?php echo $mbc_username; ?>">
-	<input type="hidden" name="note" 			value="<?php echo $store_name; ?><?php echo $text_mbc_order_id; ?><?php echo $order_id; ?>">
-	<input type="hidden" name="success_url" 	value="<?php echo $url_success; ?>">
-	<input type="hidden" name="cancel_url" 		value="<?php echo $url_cancel; ?>">
 </form>
 
-
+<?php if (isset($main_currency)): ?>
 <div class="buttons">
   <table>
     <tr>
@@ -25,6 +17,7 @@
     </tr>
   </table>
 </div>
+<? endif; ?>
 <div class="buttons">
   <table>
     <tr>
