@@ -61,9 +61,9 @@ class ControllerPaymentBTCmybitcoin extends Controller {
 			$this->data['main_currency']	=$order['currency'];
 		}
 }
-
-		/*
+		
 		// Use above calculation (mybitcoin.com has small rounding errors)
+		/*
 		$plaintext_querystring=
 		"amount="			.$this->data['total_btc'].	
 		"&currency="		."BTC".						
