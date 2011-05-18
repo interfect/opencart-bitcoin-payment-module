@@ -21,7 +21,8 @@ THE SOFTWARE.
 About
 	BTC payment via mybitcoin.com module for opencart.
 
-	
+Version 0.2	
+	1. Small bugfix allowing to use BTC as currency without conversions
 Version 0.1
 	1. GnuPG authentication not implemented, all security depends upon keeping "SCI Automation Key" secret.
 	2. Slightly modified mybitcoin.com merchant library included
