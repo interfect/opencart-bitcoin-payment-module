@@ -1,8 +1,7 @@
-
 <form action="https://www.mybitcoin.com/sci/paypage.php?t=<?php echo $enc_token; ?>" method="post" id="checkout" name="btc_checkout">
 </form>
 
-
+<?php if (isset($main_currency)): ?>
 <div class="buttons">
   <table>
     <tr>
@@ -18,6 +17,7 @@
     </tr>
   </table>
 </div>
+<? endif; ?>
 <div class="buttons">
   <table>
     <tr>
