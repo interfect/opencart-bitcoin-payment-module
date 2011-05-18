@@ -52,13 +52,14 @@ class ControllerPaymentBTCmybitcoin extends Controller {
 		$this->data['order_id']			=$order['order_id'];
 		$this->data['order_total']		=$order['total'];
 		$this->data['order_currency']	=$order['currency'];
-		
+		if ($order['currency']!='BTC') {
 		$result=mbc_getrates();
 		if ($result['SCI_Reason'] && $result['SCI_Currency_'.$order['currency'].'_Rate']) {
 			$this->data['total_btc']		=round($order['total']/$result['SCI_Currency_'.$order['currency'].'_Rate'],2);
 			$this->data['btc_rate']			=round($result['SCI_Currency_'.$order['currency'].'_Rate'],3);
 			$this->data['main_currency']	=$order['currency'];
 		}
+}
 		
 		$plaintext_querystring=
 //		"amount="			.$order['total'].			// Use if you want mybitcoin.com to calculate for you
