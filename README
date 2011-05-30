@@ -31,7 +31,7 @@ Version 0.1
 	
 System Requirements:
 	mybitcoin.com account
-	Opencart 1.4.9.4
+	Opencart 1.4.9.4 or 1.4.9.5
 	PHP 5+
 	Curl PHP Extension
 	Preg PHP Extension
